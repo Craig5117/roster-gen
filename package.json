@@ -1,0 +1,26 @@
+{
+  "name": "team-roster-generator",
+  "version": "1.0.0",
+  "description": "An app that generates an HTML team roster.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craig5117/team-roster-generator.git"
+  },
+  "author": "Craig Bennett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Craig5117/team-roster-generator/issues"
+  },
+  "homepage": "https://github.com/Craig5117/team-roster-generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.6.3"
+  }
+}
