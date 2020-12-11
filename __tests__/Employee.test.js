@@ -9,9 +9,21 @@ test('Creates an Employee object', () => {
 
 test('Returns Employee name', () => {
     const employee = new Employee('Bilbo', 456, 'bilbo@email.com');
-    expect(employee.getName()).toBe('Employee Name: Bilbo')
+    expect(employee.getName()).toBe('Bilbo');
+});
+
+test('Returns Employee ID', () => {
+    const employee = new Employee('Cici', 789, 'cici@email.com');
+    expect(employee.getId()).toBe('ID: 789');
+});
+
+test('Returns Employee email', () => {
+    const employee = new Employee('Dan', 100, 'dan@email.com');
+    expect(employee.getEmail()).toBe('Email: dan@email.com');
+});
+ 
+test('Returns Employee Role (Employee)', () => {
+    const employee = new Employee('Ed', 110, 'ed@email.com');
+    expect(employee.getRole()).toBe('Employee');
 })
-// expect(employee.getName)
-//     expect 
-//     expect
 //     expect 
