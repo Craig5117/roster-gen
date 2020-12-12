@@ -6,17 +6,17 @@ const employeeQueries = require('./lib/Questions');
 const questionSwitch = require('./lib/Questions');
 
 
-
-
-
-
-
-
-
 function init() {
-    
     console.log("Let's get started building your team roster!")
     return questionSwitch('manager');    
 }
 
-init();
+
+(async function app() {
+    const teamData = await init();
+    console.log(teamData);
+
+})();
+
+
+
