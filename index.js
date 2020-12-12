@@ -17,6 +17,37 @@ const roleSpecificQuery = function(employeeRole) {
                 message: `What is the ${employeeRole}'s office number? (Enter a number)`,
                 ...validation.numberInputValidation
             }
+        case 'engineer':
+            return {
+                type: 'input',
+                name: 'github',
+                message: `What is the ${employeeRole}'s GitHub Username? (Required)`,
+                validate: githubInput => {
+                    if (githubInput) {
+                        return true;
+                    }
+                    else {
+                    console.log(`
+!!!!! Please enter the ${employeeRole}'s GitHub Username !!!!!`);
+                    return false;
+                    }
+                }
+            }
+        case 'intern':
+            return {
+                type: 'input',
+                name: 'school',
+                message: `What school does the ${employeeRole} attend? (You may enter N/A if not available)`,
+                validate: schoolInput => {
+                    if (schoolInput) {
+                        return true;
+                    }
+                    else {
+                        console.log(`
+!!!!! Please enter a school name or N/A !!!!!`)
+                    }
+                }
+            }
     }
 }
 
@@ -43,13 +74,15 @@ const employeeInquiries = [
         ...validation.numberInputValidation
     },
     {
-        message: `What is the ${employeeRole}'s email address?`,
-        name: "email",
         type: "input",
-        // default: () => {},
+        name: "email",
+        message: `What is the ${employeeRole}'s email address?`,
         ...validation.emailInputValidation
     },
-    roleSpecificQuery(employeeRole)
+    roleSpecificQuery(employeeRole),
+    {
+    
+    }
 ]
 
 
