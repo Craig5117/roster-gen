@@ -69,33 +69,33 @@ function appMenu() {
                     });      
                     break
                 case '3. Quit':
-                    return teamMembers;
+                    return console.log(teamMembers);
             }
-        }).then(team => {
-            return team;
         })
     }
     
-    // function app() {
+    
     buildManager().then(managerData => {
         return new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNumber);
     }).then(manager => {
         teamMembers = [...teamMembers, manager];
         mainMenu();
     })
-// }
+
     
 }
 
 
-(async function app() {
-    try {
-        const team = await appMenu();
-        // await console.log(teamdata);
-        
-    }
-    catch (error) {
-        if (error) console.log(error) 
-    }
+appMenu();
 
-})();
+// (async function app() {
+//     try {
+//         const team = await appMenu();
+//         // await console.log(teamdata);
+        
+//     }
+//     catch (error) {
+//         if (error) console.log(error) 
+//     }
+
+// })();
