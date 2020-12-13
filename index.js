@@ -1,7 +1,6 @@
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-// const menu = require('node-menu')
 const questionSwitch = require('./lib/Questions');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template.js');
@@ -63,14 +62,26 @@ function appMenu() {
                     break;      
                 case '2. Add Intern':
                     buildIntern().then(internData => {
-                        return new Intern(internData.name, internData.id, internData.email, internData.github)
+                        return new Intern(internData.name, internData.id, internData.email, internData.school)
                     }).then(Intern => {
                        teamMembers = [...teamMembers, Intern]
                        mainMenu(); 
                     });      
                     break
                 case '3. Quit':
-                    return generatePage(teamMembers);
+                   generatePage(teamMembers);
+                //    .then(htmlData => {
+                //     console.log(htmlData);
+                    // });
+                    // team = teamMembers;
+                    // (async function generate(team) {
+                    //     try {
+                    //         const htmlData = await generatePage(team);
+                    //         await console.log(htmlData);                           
+                    //     } catch (error) {
+                    //        if (error) console.log(error) 
+                    //     }
+                    // })();
             }
         })
     }
