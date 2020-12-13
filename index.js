@@ -4,6 +4,7 @@ const Intern = require('./lib/Intern');
 // const menu = require('node-menu')
 const questionSwitch = require('./lib/Questions');
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template.js');
 const appLogo = `
 ██████╗  ██████╗ ███████╗████████╗███████╗██████╗     
 ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗    
@@ -69,7 +70,7 @@ function appMenu() {
                     });      
                     break
                 case '3. Quit':
-                    return console.log(teamMembers);
+                    return generatePage(teamMembers);
             }
         })
     }
