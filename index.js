@@ -3,6 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const questionSwitch = require('./lib/Questions');
 const inquirer = require('inquirer');
+const fs = require('fs');
 const generatePage = require('./src/page-template.js');
 const appLogo = `
 ██████╗  ██████╗ ███████╗████████╗███████╗██████╗     
@@ -82,20 +83,11 @@ function appMenu() {
                     break
                 default:
                    generatePage(teamMembers).then(teamHtml => {
-                       console.log(teamHtml);
-                   });
-                //    .then(htmlData => {
-                //     console.log(htmlData);
-                //     });
-                    // team = teamMembers;
-                    // (async function generate(team) {
-                    //     try {
-                    //         const htmlData = await generatePage(team);
-                    //         await console.log(htmlData);                           
-                    //     } catch (error) {
-                    //        if (error) console.log(error) 
-                    //     }
-                    // })();
+                    console.log('Generating Roster...')
+                    return fs.writeFile('./dist/index.html', teamHtml, err => {
+                        if (err) console.log(err)
+                    }).then(console.log('Finished! Checkout dist/index.html to find see the results.'));
+                   })
             }
         })
     }
