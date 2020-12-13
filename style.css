@@ -1,0 +1,13 @@
+header {
+    box-shadow: inset 0 0 30px rgba(204, 15, 53, .5);
+}
+
+.card {
+    box-shadow: 0.5em 0.5em 0.4em -0.3em rgba(10,10,10,.7), 0 0 0 1px rgba(10,10,10,.02);
+}
+
+.card p {
+    border: solid 1px rgba(181, 181, 181, 0.7);
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
