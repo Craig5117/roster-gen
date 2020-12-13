@@ -14,7 +14,7 @@ test('Creates Engineer object with Engineer specific properties', () => {
 
 test('Generates a GitHub link', () => {
   const engineer = new Engineer('Cici', 789, 'cici@email.com', 'ciciHub');
-  expect(engineer.getGithub()).toBe('https://github.com/ciciHub');
+  expect(engineer.getGithub()).toBe('ciciHub');
 });
 
 test('Overwrites Employee role (Engineer)', () => {

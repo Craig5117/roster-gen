@@ -19,7 +19,7 @@ test('Returns Employee ID', () => {
 
 test('Returns Employee email', () => {
   const employee = new Employee('Dan', 100, 'dan@email.com');
-  expect(employee.getEmail()).toBe('Email: dan@email.com');
+  expect(employee.getEmail()).toBe('dan@email.com');
 });
 
 test('Returns Employee Role (Employee)', () => {

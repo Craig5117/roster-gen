@@ -23,10 +23,22 @@ const appLogo = `
 
 
 
+let teamMembers = [];
 
-function appMenu() {
-    let teamMembers = [];
-    
+// const PUBLIC_DIR = path.resolve(__dirname, "public");
+// const publicPath = path.join(PUBLIC_DIR, "team.html")
+
+/*
+  function buildTeam() {
+    // Create the output directory if the output path doesn't exist
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+  }
+*/
+
+function appMenu() {    
     function buildManager() {
         console.log(appLogo)
         console.log("Let's get started building your team roster!")
@@ -68,11 +80,13 @@ function appMenu() {
                        mainMenu(); 
                     });      
                     break
-                case '3. Quit':
-                   generatePage(teamMembers);
+                default:
+                   generatePage(teamMembers).then(teamHtml => {
+                       console.log(teamHtml);
+                   });
                 //    .then(htmlData => {
                 //     console.log(htmlData);
-                    // });
+                //     });
                     // team = teamMembers;
                     // (async function generate(team) {
                     //     try {
