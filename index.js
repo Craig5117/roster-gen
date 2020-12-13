@@ -86,7 +86,7 @@ function appMenu() {
                     console.log('Generating Roster...')
                     return fs.writeFile('./dist/index.html', teamHtml, err => {
                         if (err) console.log(err)
-                    }).then(console.log('Finished! Checkout dist/index.html to find see the results.'));
+                    });
                    })
             }
         })

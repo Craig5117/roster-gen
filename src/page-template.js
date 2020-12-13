@@ -28,11 +28,11 @@ const generateRoster = teamMembers => {
                 return spec;
             }
             else if (member.getSchool) {
-                spec = member.getSchool();
+                spec = `<p class="p-4">${member.getSchool()}</p>`;
                 return spec;
             }
             else if (member.getOfficeNum) {
-                spec = member.getOfficeNum();
+                spec = `<p class="p-4">${member.getOfficeNum()}</p>`;
                 return spec;
             }
         }
@@ -48,7 +48,7 @@ const generateRoster = teamMembers => {
                 <div class="has-background-white">
                     <p class="p-4">${id}</p>
                     <a href="mailto:${email}"><p class="p-4">Email: ${email}</p></a>
-                    <p class="p-4">${setSpec()}</p>
+                    ${setSpec()}
                 </div>
             </div>
         </div>`
