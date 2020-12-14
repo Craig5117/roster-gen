@@ -26,7 +26,7 @@ const generateRoster = (teamMembers) => {
     // Sets the special category for each member
     const setSpec = function () {
       if (member.getGithub) {
-        spec = `<a href="https://github.com/${member.getGithub()}"><p class="p-4">GitHub: ${member.getGithub()}</p></a>`;
+        spec = `<a href="https://github.com/${member.getGithub()}" target="_blank"><p class="p-4">GitHub: ${member.getGithub()}</p></a>`;
         return spec;
       } else if (member.getSchool) {
         spec = `<p class="p-4">${member.getSchool()}</p>`;
@@ -39,7 +39,7 @@ const generateRoster = (teamMembers) => {
 
     // Assembles the html block and adds it to the array
     const coalesced = `
-        <div class="card column is-one-quarter m-3 p-0">
+        <div class="card column is-one-quarter is-full-mobile m-3 p-0">
             <div class="card-header is-block has-background-info p-4">
                 <h2 class="title is-3 has-text-white">${name}</h2>
                 <h3 class="has-text-white subtitle is-4"><i class="${setIcon(
@@ -81,7 +81,7 @@ module.exports = (teamMembers) => {
                 <h1 class="title is-2 has-text-white">MyTeam</h1>
             </header>
             <main class="is-flex is-justify-content-center">
-                <div class="column is-four-fifths is-flex is-justify-content-center is-flex-wrap-wrap">
+                <div class="column is-four-fifths is-full-mobile is-flex is-justify-content-center is-flex-wrap-wrap">
                     ${generateRoster(teamMembers)}
                 </div>
             </main>

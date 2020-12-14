@@ -10,4 +10,16 @@ header {
     border: solid 1px rgba(181, 181, 181, 0.7);
     margin-top: -1px;
     margin-bottom: -1px;
+    overflow: hidden;
 }
+
+.card-content {
+    height: 100%;
+    padding: 0 auto;
+}
+
+/* @media screen and (max-width: 1000px) {
+    .header {
+      margin: 0;  
+    }
+} */
