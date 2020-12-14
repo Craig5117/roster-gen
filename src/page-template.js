@@ -1,59 +1,12 @@
 // This stores the individual html blocks for each member
 let html = [];
 const generateRoster = (teamMembers) => {
-  // Loops over teamMembers array and creates an html object for each member
+  // Loops over teamMembers array and creates an html object for each member. 
+  // Rendering is now handled by the Employee class method.
   teamMembers.map((member) => {
-    let role = member.getRole();
-    let icon;
-    let spec;
-    let name = member.getName();
-    let id = member.getId();
-    let email = member.getEmail();
-    // Sets the icon for each member
-    const setIcon = function (role) {
-      switch (role) {
-        case "Manager":
-          icon = `fas fa-mug-hot`;
-          return icon;
-        case "Engineer":
-          icon = `fas fa-glasses`;
-          return icon;
-        case "Intern":
-          icon = `fas fa-user-graduate`;
-          return icon;
-      }
-    };
-    // Sets the special category for each member
-    const setSpec = function () {
-      if (member.getGithub) {
-        spec = `<a href="https://github.com/${member.getGithub()}" target="_blank"><p class="p-4">GitHub: ${member.getGithub()}</p></a>`;
-        return spec;
-      } else if (member.getSchool) {
-        spec = `<p class="p-4">${member.getSchool()}</p>`;
-        return spec;
-      } else if (member.getOfficeNum) {
-        spec = `<p class="p-4">${member.getOfficeNum()}</p>`;
-        return spec;
-      }
-    };
-
+  
     // Assembles the html block and adds it to the array
-    const coalesced = `
-        <div class="card column is-one-quarter is-full-mobile m-3 p-0">
-            <div class="card-header is-block has-background-info p-4">
-                <h2 class="title is-3 has-text-white">${name}</h2>
-                <h3 class="has-text-white subtitle is-4"><i class="${setIcon(
-                  role
-                )} mr-2"></i>${role}</h3>
-            </div>
-            <div class="card-content has-background-light">
-                <div class="has-background-white">
-                    <p class="p-4">${id}</p>
-                    <a href="mailto:${email}"><p class="p-4">Email: ${email}</p></a>
-                    ${setSpec()}
-                </div>
-            </div>
-        </div>`;
+    const coalesced = member.render();
 
     return (html = [...html, coalesced]);
   });
