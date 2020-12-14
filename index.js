@@ -48,12 +48,12 @@ function appMenu() {
           type: "list",
           name: "menuChoice",
           message: "Add Your Team Members",
-          choices: ["1. Add Engineer", "2. Add Intern", "3. Quit"],
+          choices: ["Add Engineer", "Add Intern", "Quit"],
         },
       ])
       .then((selection) => {
         switch (selection.menuChoice) {
-          case "1. Add Engineer":
+          case "Add Engineer":
             // Creates an Engineer based on user input and returns to the main menu
             buildEngineer()
               .then((engineerData) => {
@@ -69,7 +69,7 @@ function appMenu() {
                 mainMenu();
               });
             break;
-          case "2. Add Intern":
+          case "Add Intern":
             // Creates an intern based on user input and returns to the main menu
             buildIntern()
               .then((internData) => {
