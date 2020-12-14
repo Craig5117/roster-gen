@@ -28,17 +28,17 @@ test("Returns Employee Role (Employee)", () => {
 });
 
 test("Returns Employee icon", () => {
-  const employee = new Employee("Fred", 117, "fred@email.com");
+  const employee = new Employee("Fred", 120, "fred@email.com");
   expect(employee.getIcon()).toBe("");
 });
 
 test("Returns Employee special property string", () => {
-  const employee = new Employee("George", 343, "george@ofthejungle.com");
+  const employee = new Employee("George", 130, "george@ofthejungle.com");
   expect(employee.getSpec()).toBe("");
 });
 
 test("Returns rendered HTML card for Employee", () => {
-  const employee = new Employee("Henry", 787, "henry@email.com");
+  const employee = new Employee("Henry", 140, "henry@email.com");
   expect(employee.render()).toBe(`
     <div class="card column is-one-quarter is-full-mobile m-3 p-0">
         <div class="card-header is-block has-background-info p-4">
@@ -47,7 +47,7 @@ test("Returns rendered HTML card for Employee", () => {
         </div>
         <div class="card-content has-background-light">
             <div class="has-background-white">
-                <p class="p-4">ID: 787</p>
+                <p class="p-4">ID: 140</p>
                 <a href="mailto:henry@email.com"><p class="p-4">Email: henry@email.com</p></a>
                 
             </div>
