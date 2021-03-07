@@ -27,6 +27,7 @@ let teamMembers = [];
 function appMenu() {
   // Sends manager to questionSwitch and returns user input  prompts
   function buildManager() {
+    console.clear();
     console.log(appLogo);
     console.log("Let's get started building your team roster!");
     return questionSwitch("manager");
