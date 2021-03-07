@@ -41,6 +41,7 @@ function appMenu() {
   }
   // Activates the main menu which recursively calls itself each time a team member is created until the user quits
   function mainMenu() {
+    console.clear();
     console.log(appLogo);
     return inquirer
       .prompt([
